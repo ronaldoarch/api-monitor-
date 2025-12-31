@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Monitor - Performance Testing Tool</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 API Monitor</h1>
+            <p class="subtitle">Ferramenta de Monitoramento e Teste de Performance de APIs</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('quick')">Teste Rápido</button>
+            <button class="tab-btn" onclick="switchTab('load')">Teste de Carga</button>
+            <button class="tab-btn" onclick="switchTab('history')">Histórico</button>
+        </div>
+
+        <!-- Tab: Teste Rápido -->
+        <div id="quick-tab" class="tab-content active">
+            <div class="card">
+                <h2>Teste Rápido de API</h2>
+                <form id="quick-test-form">
+                    <div class="form-group">
+                        <label for="quick-url">URL da API:</label>
+                        <input type="url" id="quick-url" placeholder="https://api.exemplo.com/endpoint" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Executar Teste</button>
+                </form>
+                <div id="quick-result" class="result-container"></div>
+            </div>
+        </div>
+
+        <!-- Tab: Teste de Carga -->
+        <div id="load-tab" class="tab-content">
+            <div class="card">
+                <h2>Teste de Carga</h2>
+                <form id="load-test-form">
+                    <div class="form-group">
+                        <label for="load-url">URL da API:</label>
+                        <input type="url" id="load-url" placeholder="https://api.exemplo.com/endpoint" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="requests">Total de Requisições:</label>
+                            <input type="number" id="requests" value="100" min="1" max="10000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="concurrency">Concorrência:</label>
+                            <input type="number" id="concurrency" value="10" min="1" max="100" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Iniciar Teste de Carga</button>
+                </form>
+                <div id="load-result" class="result-container"></div>
+            </div>
+        </div>
+
+        <!-- Tab: Histórico -->
+        <div id="history-tab" class="tab-content">
+            <div class="card">
+                <h2>Histórico de Testes</h2>
+                <div id="history-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
+

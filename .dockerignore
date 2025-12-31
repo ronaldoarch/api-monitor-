@@ -1,0 +1,39 @@
+# Git
+.git
+.gitignore
+
+# Binários
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+api-monitor
+
+# Arquivos de teste
+*.test
+
+# Arquivos de cobertura
+*.out
+
+# Dependências (serão baixadas no build)
+vendor/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Documentação (opcional, pode remover se quiser incluir)
+README.md
+EXAMPLES.md
+
